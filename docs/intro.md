@@ -1,47 +1,92 @@
 ---
+id: getting-started
+title: Getting Started
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# 🧬 Clonar y levantar un Monorepo con Turborepo
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Este documento explica cómo clonar un proyecto que utiliza [Turborepo](https://turbo.build/repo) para la gestión de un monorepo.
 
-## Getting Started
+## 🚀 Requisitos previos
 
-Get started by **creating a new site**.
+Antes de comenzar, asegurate de tener instalado:
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- **Git**
+- **Node.js** (versión recomendada en el proyecto)
+- **PNPM** (recomendado por Turborepo para workspaces más eficientes)
+- (Opcional) **Docker** si el proyecto lo requiere
 
-### What you'll need
+### Ejemplo de anidacion con Headings
+Hola hosadasjda sjoafpo janfoajsdnf aojnfaojf nalkc alskd
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
+## 📦 Clonar el repositorio
 
 ```bash
-npm init docusaurus@latest my-website classic
+git clone https://github.com/tu-org/tu-proyecto.git
+cd tu-proyecto
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+> 💡 Cambiá la URL por la de tu repositorio real.
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
+## 📂 Instalar dependencias
 
 ```bash
-cd my-website
-npm run start
+pnpm install
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+Esto instalará las dependencias en todos los paquetes del monorepo gracias a los **workspaces**.
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+## ⚙️ Estructura del proyecto
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Un monorepo típico con Turborepo tiene una estructura como esta:
+
+```
+tu-proyecto/
+├── apps/
+│   ├── web/
+│   └── admin/
+├── packages/
+│   ├── ui/
+│   └── config/
+├── turbo.json
+└── pnpm-workspace.yaml
+```
+
+- `apps/`: Contiene las aplicaciones principales del proyecto.
+- `packages/`: Contiene paquetes compartidos entre las apps.
+- `turbo.json`: Archivo de configuración de Turborepo.
+- `pnpm-workspace.yaml`: Define qué carpetas son parte del workspace.
+
+## ▶️ Levantar el proyecto
+
+```bash
+pnpm turbo run dev
+```
+
+Esto ejecutará todos los targets `dev` definidos en el `turbo.json`, normalmente para iniciar tus aplicaciones (por ejemplo, Next.js, API REST, etc.).
+
+## 🧠 Consejos útiles
+
+- Podés correr tareas específicas por app:
+
+```bash
+pnpm --filter web dev
+```
+
+- Para hacer build de todo:
+
+```bash
+pnpm turbo run build
+```
+
+## 🧪 Verificación
+
+Asegurate de que todo funciona correctamente:
+
+- Verificá en el navegador si las apps levantan correctamente (`http://localhost:3000` o similar).
+- Verificá logs de consola por si hay errores.
+
+---
+
+Listo, ¡ya tenés el monorepo funcionando! 🎉

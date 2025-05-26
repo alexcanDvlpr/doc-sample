@@ -11,32 +11,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: "Clona el proyecto",
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Accede a nuestro repositorio y clona el proyecto para poder empezar a trabajar.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: "Descubre las piezas de Hamelyn",
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Entiende todas las <b>entidades</b> y los elementos que hacen que <b>Hamelyn</b> sea posible
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: "Descubre la arquitectura",
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Descubre como trabajamos en el departamento de IT de Hamelyn. Ademas de coleccionar patitos de goma 🐣 también sabemos lo que hacemos
       </>
     ),
   },
